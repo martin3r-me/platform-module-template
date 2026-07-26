@@ -336,12 +336,14 @@
 
     {{-- Linke Sidebar --}}
     <x-slot name="sidebar">
-        <x-ui-page-sidebar title="Komponenten" width="w-72" :defaultOpen="true">
-            <div class="p-6">
-                <h3 class="text-xs font-semibold uppercase tracking-wide text-[color:var(--nx-faint)] mb-3">nx-Showcase</h3>
-                <p class="text-sm text-[color:var(--nx-muted)]">
-                    Jede x-nx-* Komponente einmal live. Quelltext dieser View = Copy-Paste-Referenz.
-                </p>
+        <x-ui-page-sidebar title="Komponenten" width="w-80" :defaultOpen="true">
+            <div class="p-6 space-y-6">
+                <div>
+                    <h3 class="text-xs font-semibold uppercase tracking-wide text-[color:var(--nx-faint)] mb-3">nx-Showcase</h3>
+                    <p class="text-sm text-[color:var(--nx-muted)]">
+                        Jede x-nx-* Komponente einmal live. Quelltext dieser View = Copy-Paste-Referenz.
+                    </p>
+                </div>
             </div>
         </x-ui-page-sidebar>
     </x-slot>
