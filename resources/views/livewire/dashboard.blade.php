@@ -63,9 +63,11 @@
             nx-BAUSTEIN-REFERENZ (auskommentiert) — kopieren & anpassen.
             Volle Prop-Liste je Komponente: Docblock in
             ui-tailwind/resources/views/components-nx/<name>.blade.php.
+            WICHTIG: Blade-Kommentare NICHT verschachteln — dieser Block ist EIN
+            Kommentar; innere Labels stehen daher als Klartext-Zeilen (>> …).
             ══════════════════════════════════════════════════════════════════
 
-            {{-- Kennzahlen: KPI-Icon trägt Semantikfarbe, sonst neutral --}}
+            >> Kennzahlen: KPI-Icon trägt Semantikfarbe, sonst neutral
             <x-nx-stat-grid :cols="4">
                 <x-nx-stat label="Gesamt"   :value="$stats['total']"  icon="heroicon-o-cube" />
                 <x-nx-stat label="Aktiv"    :value="$stats['active']" icon="heroicon-o-check-circle" accent="var(--nx-success)" />
@@ -73,14 +75,14 @@
                 <x-nx-stat label="Fehler"   :value="$stats['error']"  icon="heroicon-o-x-circle" accent="var(--nx-danger)" />
             </x-nx-stat-grid>
 
-            {{-- Section = ruhiger Kopf über einem Container --}}
+            >> Section = ruhiger Kopf über einem Container
             <x-nx-section icon="heroicon-o-list-bullet" title="Einträge" :hint="$entities->count()"
                           description="Register-artige Daten → Tabelle; Entitäten mit Identität → Liste">
                 <x-slot name="action">
                     <x-nx-button variant="ghost" size="sm" :href="route('module-template.entities.index')">Alle</x-nx-button>
                 </x-slot>
 
-                {{-- TABELLE = Register/Ledger: gleichförmige Datensätze, spaltenweise vergleichen/sortieren --}}
+                >> TABELLE = Register/Ledger: gleichförmige Datensätze, spaltenweise vergleichen/sortieren
                 <x-nx-card flush>
                     <x-nx-table>
                         <x-nx-table-header>
@@ -100,7 +102,7 @@
                     </x-nx-table>
                 </x-nx-card>
 
-                {{-- LISTE = Katalog/Entitäten: Element mit Identität, erkennen & handeln statt vergleichen --}}
+                >> LISTE = Katalog/Entitäten: Element mit Identität, erkennen & handeln statt vergleichen
                 <x-nx-card flush class="divide-y divide-[color:var(--nx-line)]">
                     @foreach($entities as $entity)
                         <x-nx-list-item :href="route('module-template.entities.show', $entity)"
@@ -112,7 +114,7 @@
                 </x-nx-card>
             </x-nx-section>
 
-            {{-- Hinweis/Attention → Callout (bedeutungstragende Farbe) --}}
+            >> Hinweis/Attention → Callout (bedeutungstragende Farbe)
             <x-nx-callout variant="info" icon="heroicon-o-information-circle" title="Hinweis">
                 Farbe lebt nur bedeutungstragend im Inhalt — Status, Hinweis, KPI, Timing.
             </x-nx-callout>
