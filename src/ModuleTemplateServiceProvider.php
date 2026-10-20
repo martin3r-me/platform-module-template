@@ -24,7 +24,6 @@
 namespace Platform\ModuleTemplate;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Livewire\Livewire;
 use Platform\Core\PlatformCore;
@@ -95,7 +94,7 @@ class ModuleTemplateServiceProvider extends ServiceProvider
         if (
             config()->has('module-template.routing') &&
             config()->has('module-template.navigation') &&
-            Schema::hasTable('modules')
+            PlatformCore::modulesTableExists()
         ) {
             /**
              * Modul bei PlatformCore registrieren
