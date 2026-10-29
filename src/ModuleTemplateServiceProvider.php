@@ -108,6 +108,7 @@ class ModuleTemplateServiceProvider extends ServiceProvider
             PlatformCore::registerModule([
                 'key'        => 'module-template', // Eindeutiger Schlüssel
                 'title'      => 'Module Template', // Anzeige-Name
+                'group'      => 'dev',
                 'routing'    => config('module-template.routing'),
                 'guard'      => config('module-template.guard'),
                 'navigation' => config('module-template.navigation'),
